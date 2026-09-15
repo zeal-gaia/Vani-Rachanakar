@@ -1,0 +1,62 @@
+<html>
+<body>
+<div id="main">
+<center>
+<img src = "logo.jpg" height="200px">
+<p>
+<h1>Welcome to Vani Rachanakar, your assistant for adding voice to your conversations!</h1>
+
+<table><tr><td colspan="2"><h2><center>How would you like to enter the text?</center></h2><td>&nbsp;&nbsp;&nbsp;<td><h2><center>Do you need help?</center></h2></tr>
+<tr height="250"><td>
+<img src="file.jpg" height="200" onclick="readFile();"><td><img src="manual.jpg" height="200" onclick="manualEntry()"><td>&nbsp;&nbsp;&nbsp;<td><img src="help.jpg" height="200" onclick="help();">
+</table>
+
+</div>
+
+<script src="speech.js"></script>
+<script>
+function help()
+{ window.open('help.html', '_blank');
+}
+
+function readFile()
+{ str = `<input type="file" id="file" accept=".txt">
+        <button onclick="readFileContents()">Read from file</button>`;
+  document.getElementById("main").innerHTML = str;  
+}
+
+async function readFileContents()
+{ const file = document.getElementById("file").files[0];
+  if (!file) return;
+  const content = await file.text();
+  const paragraphs = content
+        .split(/\r?\n\s*\r?\n/)
+        .map(p => p.trim())
+        .filter(p => p.length > 0);
+  document.getElementById("main").innerHTML = "";
+  for(let i=0; i<paragraphs.length; i++)
+  { addNewTTSBlock(); }
+  for(let i=0; i<paragraphs.length; i++)
+  { document.getElementById(`text${i}`).value = paragraphs[i];
+  }
+document.getElementById('main').insertAdjacentHTML(
+    'beforeend',
+    `<button onclick="addNewTTSBlock();">+</button>&nbsp;&nbsp;
+     <label>Save conversation as:</label>
+     <input type="text" id="filename" value="conv">&nbsp;
+     <button onclick="create();" id="create">Create Web Page</button> &nbsp; 
+`
+);}
+
+function manualEntry()
+{ document.getElementById("main").innerHTML = "";
+  addNewTTSBlock();
+  document.getElementById('main').innerHTML += 
+    `<button onclick="addNewTTSBlock();">+</button>&nbsp; &nbsp; 
+     <label>Save conversation as:</label>
+     <input type="text" id="filename" value="conv">&nbsp; 
+     <button onclick="create();" id="create">Create Web Page</button> 
+`
+;
+}
+</script>
