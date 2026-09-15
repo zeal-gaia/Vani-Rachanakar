@@ -10,8 +10,8 @@
 <tr height="250"><td>
 <img src="file.jpg" height="200" onclick="readFile();"><td><img src="manual.jpg" height="200" onclick="manualEntry()"><td>&nbsp;&nbsp;&nbsp;<td><img src="help.jpg" height="200" onclick="help();">
 </table>
-
 </div>
+<div id="next"></div>
 
 <script src="speech.js"></script>
 <script>
@@ -39,19 +39,18 @@ async function readFileContents()
   for(let i=0; i<paragraphs.length; i++)
   { document.getElementById(`text${i}`).value = paragraphs[i];
   }
-document.getElementById('main').insertAdjacentHTML(
-    'beforeend',
+  document.getElementById('next').innerHTML = 
     `<button onclick="addNewTTSBlock();">+</button>&nbsp;&nbsp;
      <label>Save conversation as:</label>
      <input type="text" id="filename" value="conv">&nbsp;
      <button onclick="create();" id="create">Create Web Page</button> &nbsp; 
 `
-);}
+}
 
 function manualEntry()
 { document.getElementById("main").innerHTML = "";
   addNewTTSBlock();
-  document.getElementById('main').innerHTML += 
+  document.getElementById('next').innerHTML = 
     `<button onclick="addNewTTSBlock();">+</button>&nbsp; &nbsp; 
      <label>Save conversation as:</label>
      <input type="text" id="filename" value="conv">&nbsp; 
