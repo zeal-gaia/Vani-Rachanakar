@@ -1,7 +1,26 @@
 <script>
 let current = 0;
 let audio;
+let visible = false;
 
+function show()
+{ if(visible) 
+  { document.getElementById("display").style.display="none";
+    document.getElementById("show").textContent = "Show Conversation";
+    visible = false;
+  } else
+  { document.getElementById("display").style.display="block";
+    document.getElementById("show").textContent = "Hide Conversation";
+    visible = true;
+  }
+}
+
+function play()
+{ current = 0;
+  audio.pause();
+  playNext();
+}
+  
 function playNext() {
     if (current >= text.length) return;
 

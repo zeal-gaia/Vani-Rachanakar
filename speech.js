@@ -54,9 +54,8 @@ async function create()
     body: form
   });  
   document.getElementById("create").disabled=false;
-  document.getElementById('main').insertAdjacentHTML(
-    'beforeend',
-    `<a href="${filename}.html" target="_blank">Open the created web page</a><p>`);
+  document.getElementById('next').innerHTML+=
+    `<a href="${filename}.html" target="_blank">Open the created web page</a><p>`;
 
 }
 
@@ -80,7 +79,7 @@ function addNewTTSBlock()
     // Generate the controls for this block
     containerDiv.innerHTML = `
 
-        <h3>Line #${blockNumber + 1}</h3>
+        <p>Line #${blockNumber + 1}: &nbsp; &nbsp;
 
         <textarea
             cols="50"

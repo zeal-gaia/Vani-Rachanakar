@@ -1,5 +1,6 @@
 <html>
 <link rel="stylesheet" href="style.css">
 <body onload = "display();">
-<div id="display"></div>
+<button onclick="show();" id="show">Show Conversation</button> &nbsp; &nbsp; <button onclick="play();">Play</button><p>
+<div hidden id="display"></div>
 
