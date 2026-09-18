@@ -6,9 +6,10 @@
 <p>
 <h1>Welcome to Vani Rachanakar, your assistant for adding voice to your conversations!</h1>
 
-<table><tr><td colspan="2"><h2><center>How would you like to enter the text?</center></h2><td>&nbsp;&nbsp;&nbsp;<td><h2><center>Do you need help?</center></h2></tr>
+<table><tr><td colspan="2"><h2><center>How would you like to enter the text?</center></h2><td>&nbsp;&nbsp;&nbsp;<td><h2><center>Do you need help?</center></h2><td><center><h2>Check out some samples!</h2></center></tr>
 <tr height="250"><td>
 <img src="file.jpg" height="200" onclick="readFile();"><td><img src="manual.jpg" height="200" onclick="manualEntry()"><td>&nbsp;&nbsp;&nbsp;<td><img src="help.jpg" height="200" onclick="help();">
+<td><img src="samples.jpg" height = "200" onclick="samples();">
 </table>
 </div>
 <div id="next"></div>
@@ -18,6 +19,10 @@
 <script>
 function help()
 { window.open('help.html', '_blank');
+}
+
+function samples()
+{ window.open('samples.html', '_blank');
 }
 
 function readFile()

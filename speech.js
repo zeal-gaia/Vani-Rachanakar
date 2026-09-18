@@ -47,12 +47,50 @@ async function create()
   const form = new FormData();
   form.append("text", JSON.stringify(data));
   form.append("voices", JSON.stringify(voices));
-  const filename = document.getElementById("filename").value;
+  const filename1 = document.getElementById("filename").value;
+  const filename = "samples/"+ filename1;
   form.append("filename", filename);  
   var response = await fetch("savefiles.php", {
     method: "POST",
     body: form
   });  
+  let wrapper = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Application</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        .download-bar { background: #2c3e50; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 100; }
+        .btn-download { background: #27ae60; color: white; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: bold; font-size: 14px; transition: background 0.2s; }
+        .btn-download:hover { background: #219653; }
+        object { flex-grow: 1; width: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+    <!-- A clean download bar at the top of their preview screen -->
+    <div class="download-bar">
+        <span>Vani Rachanakar Live Preview</span>
+        <!-- This forces the browser to download the complete data file, saving it as a clean HTML file locally -->
+        <a href="${filename1}.dat" download="${filename1}.html" class="btn-download">Save Application to Computer</a>
+    </div>
+
+    <!-- The interactive preview container -->
+    <object data="${filename1}.dat" type="text/html"></object>
+
+</body>
+</html>
+`;
+  const form1 = new FormData();
+  form1.append("text",wrapper);
+  form1.append("filename", filename);  
+  var response = await fetch("savewrapper.php", {
+    method: "POST",
+    body: form1
+  }); 
   document.getElementById("create").disabled=false;
   document.getElementById('next').innerHTML+=
     `<a href="${filename}.html" target="_blank">Open the created web page</a><p>`;

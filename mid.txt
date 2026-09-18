@@ -1,0 +1,14 @@
+<script>
+var text = [
+  { text: "Hi, my name is Sitaram! How do you do?", audioUrl: "", voice: "voice1"},
+  { text: "Hi, I am Shana! How do you do?", audioUrl: "", voice: "voice2"},
+  { text: "And I am Priya! Lovely meeting you!",audioUrl: "", voice: "voice3"},
+  { text: "I am lucky to be with two such lovely women!", audioUrl: "", voice: "voice1"},
+  { text: "We heard you were very fond of flirting, this proves it!", audioUrl: "", voice: "voice3"},
+  { text: "Where did you hear that? It is absolutely false!", audioUrl: "", voice: "voice1"},
+  { text: "We heard it from everyone! Did you not hear Suman say so, the other day?", audioUrl: "", voice: "voice2"},
+  { text: "Very true!! Parul also said the same thing!", audioUrl: "", voice: "voice3"}
+]
+ 
+var voices = ["voice1", "voice2", "voice3"];
+</script>

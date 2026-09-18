@@ -1,5 +1,73 @@
 <html>
-<link rel="stylesheet" href="style.css">
+<style>
+.style1 {
+    background: #E8F4FD;
+    color: #17365D;
+    border-left: 6px solid #4A90E2;
+}
+
+.style2 {
+    background: #FFF3E0;
+    color: #5D4037;
+    border-left: 6px solid #F5A623;
+}
+
+.style3 {
+    background: #E8F5E9;
+    color: #245B2A;
+    border-left: 6px solid #4CAF50;
+}
+
+.style4 {
+    background: #F3E5F5;
+    color: #54245F;
+    border-left: 6px solid #9C5CAD;
+}
+
+.style5 {
+    background: #FFFDE7;
+    color: #5C5200;
+    border-left: 6px solid #D4B800;
+}
+
+.style6 {
+    background: #E0F7FA;
+    color: #15545A;
+    border-left: 6px solid #26A6B8;
+}
+
+.style7 {
+    background: #FCE4EC;
+    color: #6B263D;
+    border-left: 6px solid #D85B7A;
+}
+
+.style8 {
+    background: #ECEFF1;
+    color: #37474F;
+    border-left: 6px solid #78909C;
+}
+
+.style9 {
+    background: #FBE9E7;
+    color: #663C35;
+    border-left: 6px solid #E5735E;
+}
+
+.style10 {
+    background: #EDE7F6;
+    color: #3F3260;
+    border-left: 6px solid #7564B5;
+}
+
+.conversation {
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+</style>
 <body onload = "display();">
 <button onclick="show();" id="show">Show Conversation</button> &nbsp; &nbsp; <button onclick="play();">Play</button><p>
 <div hidden id="display"></div>

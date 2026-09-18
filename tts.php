@@ -8,7 +8,7 @@ $text  = $input['text'] ?? '';
 $voice = $input['voice'] ?? 'shubh';
 $pace  = $input['pace'] ?? 1.0;
 
-$env = parse_ini_file('tts.env'); 
+$env = parse_ini_file('tts.env');
 $apiKey = $env['SARVAM_API_KEY'];
 
 $data = [

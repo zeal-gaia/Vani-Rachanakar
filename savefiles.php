@@ -4,10 +4,10 @@ $baseDir = __DIR__;
 
 $pre  = file_get_contents($baseDir . "/pre.txt");
 $post = file_get_contents($baseDir . "/post.txt");
-$filename = isset($_POST['filename']) ? basename($_POST['filename']) : "conv.html";
+$filename = isset($_POST['filename']) ? $_POST['filename'] : "conv.dat";
 
-if (strtolower(pathinfo($filename, PATHINFO_EXTENSION)) !== 'html') {
-    $filename .= '.html';
+if (strtolower(pathinfo($filename, PATHINFO_EXTENSION)) !== 'dat') {
+    $filename .= '.dat';
 }
 
 $text = isset($_POST['text']) ? json_decode($_POST['text'], true) : [];
