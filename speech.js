@@ -48,7 +48,7 @@ async function create()
   form.append("text", JSON.stringify(data));
   form.append("voices", JSON.stringify(voices));
   const filename1 = document.getElementById("filename").value;
-  const filename = "samples/"+ filename1;
+  const filename = "users/"+ filename1;
   form.append("filename", filename);  
   var response = await fetch("savefiles.php", {
     method: "POST",
@@ -131,43 +131,43 @@ function addNewTTSBlock()
 
         <select id="voices${blockNumber}" name="voices">
 
-            <option value="shubh">Shubh</option>
-            <option value="aditya">Aditya</option>
-            <option value="ritu">Ritu</option>
-            <option value="priya">Priya</option>
-            <option value="neha">Neha</option>
-            <option value="rahul">Rahul</option>
-            <option value="pooja">Pooja</option>
-            <option value="rohan">Rohan</option>
-            <option value="simran">Simran</option>
-            <option value="kavya">Kavya</option>
-            <option value="amit">Amit</option>
-            <option value="dev">Dev</option>
-            <option value="ishita">Ishita</option>
-            <option value="shreya">Shreya</option>
-            <option value="ratan">Ratan</option>
-            <option value="varun">Varun</option>
-            <option value="manan">Manan</option>
-            <option value="sumit">Sumit</option>
-            <option value="roopa">Roopa</option>
-            <option value="kabir">Kabir</option>
-            <option value="aayan">Aayan</option>
-            <option value="ashutosh">Ashutosh</option>
-            <option value="advait">Advait</option>
-            <option value="anand">Anand</option>
-            <option value="tanya">Tanya</option>
-            <option value="tarun">Tarun</option>
-            <option value="sunny">Sunny</option>
-            <option value="mani">Mani</option>
-            <option value="gokul">Gokul</option>
-            <option value="vijay">Vijay</option>
-            <option value="shruti">Shruti</option>
-            <option value="suhani">Suhani</option>
-            <option value="mohit">Mohit</option>
-            <option value="kavitha">Kavitha</option>
-            <option value="rehan">Rehan</option>
-            <option value="soham">Soham</option>
-            <option value="rupali">Rupali</option>
+       <option value="aayan">Aayan</option>
+       <option value="aditya">Aditya</option>
+       <option value="advait">Advait</option>
+       <option value="amit">Amit</option>
+       <option value="anand">Anand</option>
+       <option value="ashutosh">Ashutosh</option>
+       <option value="dev">Dev</option>
+       <option value="gokul">Gokul</option>
+       <option value="ishita">Ishita</option>
+       <option value="kabir">Kabir</option>
+       <option value="kavitha">Kavitha</option>
+       <option value="kavya">Kavya</option>
+       <option value="manan">Manan</option>
+       <option value="mani">Mani</option>
+       <option value="mohit">Mohit</option>
+       <option value="neha">Neha</option>
+       <option value="pooja">Pooja</option>
+       <option value="priya">Priya</option>
+       <option value="rahul">Rahul</option>
+       <option value="ratan">Ratan</option>
+       <option value="rehan">Rehan</option>
+       <option value="ritu">Ritu</option>
+       <option value="rohan">Rohan</option>
+       <option value="roopa">Roopa</option>
+       <option value="rupali">Rupali</option>
+       <option value="shubh">Shubh</option>
+       <option value="shreya">Shreya</option>
+       <option value="shruti">Shruti</option>
+       <option value="simran">Simran</option>
+       <option value="soham">Soham</option>
+       <option value="suhani">Suhani</option>
+       <option value="sumit">Sumit</option>
+       <option value="sunny">Sunny</option>
+       <option value="tanya">Tanya</option>
+       <option value="tarun">Tarun</option>
+       <option value="varun">Varun</option>
+       <option value="vijay">Vijay</option>
 
         </select> &nbsp; &nbsp;
 
